@@ -5,8 +5,8 @@ class EstateProperty(models.Model):
     _description = "Real Estate property plans"
     _order = "sequence"
     
-    # name = fields.Char('Property Name', required=True, translate=True)
-    # description = fields.Text('Text')
+    name = fields.Char('Property Name', required=True, translate=True)
+    description = fields.Text('Text')
     postcode = fields.Char('Postcode')
     data_availability = fields.Date('Data')
     expected_price = fields.Float('Expected Price')
@@ -19,7 +19,7 @@ class EstateProperty(models.Model):
     garden_area = fields.Integer('Garden Area')
     garden_orientation = fields.Selection(
         string='Orientation',
-        selection = [('north','North'),('south','South',('east','East'),('west','West'))],
+        selection = [('north','North'),('south','South'),('east','East'),('west','West')],
         help = "Orientation is used to separate geographical location"
     )
     sequence = fields.Integer('Sequence')
