@@ -1,11 +1,19 @@
+from email.policy import default
+from hashlib import new
+from attr import field
 from odoo import fields, models
 
 class EstateProperty(models.Model):
     _name = "estate.property"
     _description = "Real Estate property plans"
     _order = "sequence"
+    def create (self,values):
+        override_create = super(EstateProperty,self).create(values)
+        return override_create
     
-    name = fields.Char('Property Name', required=True, translate=True)
+    # name = fields.Char('Property Name', required=True, translate=True)
+    name = fields.Char(default="Unknown")
+    last_seen = fields.Datetime("Last Seen", default=lambda self: fields.Datetime.now())
     description = fields.Text('Text')
     postcode = fields.Char('Postcode')
     data_availability = fields.Date('Data')
@@ -23,4 +31,7 @@ class EstateProperty(models.Model):
         help = "Orientation is used to separate geographical location"
     )
     sequence = fields.Integer('Sequence')
+    active = fields.Boolean(active=False)
+    state = fields.Boolean(default="New")
+
 
