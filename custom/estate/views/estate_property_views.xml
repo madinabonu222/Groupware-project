@@ -1,16 +1,82 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
+  <record id="estate_property_view_form" model="ir.ui.view">
+    <field name="name">estate.property.form</field>
+    <field name="model">estate.property</field>
+    <field name="arch" type="xml">
+      <form string="Test">
+        <sheet>
+          <group>
+            <group>
+            <field name="title"/>
+            </group>
+            <group>
+            <field name="expected_price"/>
+            </group>
+            <group>
+            <field name="data_availability"/>
+            </group>
+            <group>
+            <field name="selling_price"/>
+            </group>
+
+          <notebook>
+                <page string="Description">
+                    <field name="description">
+                    <field name="bedrooms"/>
+                    <field name="living_area"/>
+                    <field name="facades"/>
+                    <field name="garage"/>
+                    <field name="garden"/>
+                    <field name="garden_area"/>
+                    <field name="garden_orientation"/>
+                    
+
+                  
+                    
+                    
+          
+                <div>
+                <field name="facades">
+                </field>
+                </div>
+                
+                </field>
+                </page>
+                </notebook>
+        </group>
+    </sheet>
+</form>
+</field>
+</record>
+
+
+  <record id="estate_property_view_tree" model="ir.ui.view">
+    <field name="name">estate.property.tree</field>
+    <field name="model">estate.property</field>
+    <field name="arch" type="xml">
+        <tree string="Tests">
+            <field name = "title"/>
+            <!-- <field name = "last_seen"/> -->
+            <field name = "postcode"/>
+            <field name = "bedrooms"/>
+            <field name = "living_area"/>
+            <field name = "expected_price"/>
+            <field name = "selling_price"/>
+            <field name = "data_availability"/>
+        </tree>
+    </field>
+  </record>
+
   <record id="estate_property" model="ir.actions.act_window">
-    <!-- <record id="estate_property" model="ir.ui.view"> -->
     <field name="name">Properties</field>
     <field name="res_model">estate.property</field>
     <field name="view_mode">tree,form</field>
-      <header>
-      <button name="estate_property" string="Test" type="action" states="draft"/>
-      </header>
     
-  
   </record>
 
 </odoo>
+
+
+<!-- har bir notebookdan kn page string qo'yib chiqish kerak, uyga borgandan keyin -->
