@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-<!-- Real Estate root menu - Advertisement (menu bar 1) -->
-<menuitem id="estate_menu_root" name="Real Estate"/>
+<menuitem id="estate_menu_root" name="Real Estate">
     <menuitem id="estate_first_level_menu" name="Advertisement">
         <menuitem id="estate_model_menu_action" action="estate_property"/>
-</menuitem>
-<!-- Real Estate root menu - Setting (menu bar 2) -->
-    <menuitem id="estate_second_level_menu" name="Setting" parent="estate_menu_root" sequence="1"/>
-
-        <menuitem id="estate_model_menu_action" action="estate_property_type"/>
         
+    </menuitem>
+</menuitem>
+
 </odoo>

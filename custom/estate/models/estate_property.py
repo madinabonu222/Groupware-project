@@ -1,6 +1,3 @@
-from email.policy import default
-from hashlib import new
-from attr import field
 from odoo import fields, models
 
 class EstateProperty(models.Model):
@@ -13,7 +10,7 @@ class EstateProperty(models.Model):
     
     # name = fields.Char('Property Name', required=True, translate=True)
     title = fields.Char(default="Unkown")
-    last_seen = fields.Datetime("Last Seen", default=lambda self: fields.Datetime.now())
+    last_seen = fields.Datetime("Last Seen")
     description = fields.Text('Description')
     postcode = fields.Char('Postcode')
     data_availability = fields.Date('Available From')
@@ -34,7 +31,7 @@ class EstateProperty(models.Model):
 
     # active = fields.Boolean(active=False)
     active = fields.Boolean('Active', default=True)
-    status = fields.Boolean(default="New")
+    status = fields.Char(default="New")
     # state = fields.Boolean(default="New")
 
 

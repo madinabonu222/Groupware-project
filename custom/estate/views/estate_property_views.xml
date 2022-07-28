@@ -13,7 +13,7 @@
             <field name = "expected_price"/>
             <field name = "selling_price"/>
             <field name = "data_availability"/>
-                  <filter string="Available" name="data_availability" domain="[('active', '=', False)]"/>
+            <filter string="Available" name="data_availability" domain="[('active', '=', False)]"/>
                   
                   <group expand="1" string="Group By">
                       <filter string="Postcode" name="postcode" context="{'group_by':'postcode', 'residual_visible':True}"/>
