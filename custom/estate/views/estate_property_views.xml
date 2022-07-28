@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
+  <record  id="estate_property_view_search" model="ir.ui.view">
+    <field name="name">estate.property.search</field>
+    <field name="model">estate.property</field>
+    <field name="arch" type="xml">
+      <search string="Estate Property">
+            <field name = "title"/>
+            <field name = "postcode"/>
+            <field name = "bedrooms"/>
+            <field name = "living_area"/>
+            <field name = "expected_price"/>
+            <field name = "selling_price"/>
+            <field name = "data_availability"/>
+                  <filter string="Available" name="data_availability" domain="[('active', '=', False)]"/>
+                  
+                  <group expand="1" string="Group By">
+                      <filter string="Postcode" name="postcode" context="{'group_by':'postcode', 'residual_visible':True}"/>
+                  </group>
+
+      </search>
+    </field>
+  </record>
+
   <record id="estate_property_view_form" model="ir.ui.view">
     <field name="name">estate.property.form</field>
     <field name="model">estate.property</field>
@@ -23,28 +45,41 @@
 
           <notebook>
                 <page string="Description">
-                    <field name="description">
-                    <field name="bedrooms"/>
-                    <field name="living_area"/>
-                    <field name="facades"/>
-                    <field name="garage"/>
-                    <field name="garden"/>
-                    <field name="garden_area"/>
-                    <field name="garden_orientation"/>
-                    
-
-                  
-                    
-                    
-          
                 <div>
-                <field name="facades">
-                </field>
+                <h5>Description</h5>
+                    <field name="description"/>
                 </div>
-                
-                </field>
+                <div>
+                <h5>Bedrooms</h5>
+                    <field name="bedrooms"/>
+                </div>
+                <div>
+                <h5>Living Area (sqm)</h5>
+                    <field name="living_area"/>
+                </div>
+                <div>
+                <h5>Facades</h5>
+                    <field name="facades"/>
+                </div>
+                <div>
+                <h5>Garage</h5>
+                    <field name="garage"/>
+                </div>
+                <div>
+                <h5>Garden</h5>
+                    <field name="garden"/>
+                </div>
+                <div>
+                <h5>Garden Area (sqm)</h5>
+                    <field name="garden_area"/>
+                </div>
+                <div>
+                <h5>Garden Orientation</h5>
+                    <field name="garden_orientation"/>
+                </div>
+                   
                 </page>
-                </notebook>
+          </notebook>
         </group>
     </sheet>
 </form>
