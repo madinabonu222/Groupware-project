@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-<record id="estate_property" model="ir.actions.act_window">
-    <field name="name">Setting</field>
+<record id="estate_property_type" model="ir.actions.act_window">
+    <field name="name">Property Type</field>
     <field name="res_model">estate.property.type</field>
     <field name="view_mode">tree,form</field>
 

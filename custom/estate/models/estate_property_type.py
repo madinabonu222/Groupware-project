@@ -6,8 +6,9 @@ from odoo import fields, models
 
 class EstatePropertyType(models.Model):
     _name = "estate.property.type"
-    _description = "Real Estate property plans"
+    _description = "Real Estate property menu"
     _order = "sequence"
 
 
-    name=fields.Char(required=True)
+    name=fields.Char('Type Name', required=True)
+    title = fields.Char(default="Unkown")
